@@ -1,20 +1,8 @@
-# SNS Topic
+# SQS Queue
 
-Creates an SNS Topic. Supports all standard options for the SNS Topic resource.
+Creates an SQS Queue. Supports all standard options for the SQS Queue resource.
 
-Note that this module includes submodules for other common SNS needs, including:
-
-[sns_sms_preferences](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_sms_preferences)
-
-[sns_subscription](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic_subscription#protocol-support)
-
-[sns_topic_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/)
-
-[sns_platform_application](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_platform_application)
-
-These submodules can be found under the [modules](https://github.com/so1omon563/terraform-aws-sns/tree/main/modules) directory.
-
-Examples for use can be found under the [examples](https://github.com/so1omon563/terraform-aws-sns/tree/main/examples) directory.
+Examples for use can be found under the [examples](https://github.com/so1omon563/terraform-aws-sqs/tree/main/examples) directory.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 Auto-generated technical documentation is created using [`terraform-docs`](https://terraform-docs.io/)
@@ -30,7 +18,7 @@ Auto-generated technical documentation is created using [`terraform-docs`](https
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.19.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.20.1 |
 
 ## Modules
 
@@ -40,41 +28,33 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_sns_topic.topic](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic) | resource |
+| [aws_sqs_queue.queue](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_application_failure_feedback_role_arn"></a> [application\_failure\_feedback\_role\_arn](#input\_application\_failure\_feedback\_role\_arn) | ARN of the IAM role for failure feedback. | `string` | `null` | no |
-| <a name="input_application_success_feedback_role_arn"></a> [application\_success\_feedback\_role\_arn](#input\_application\_success\_feedback\_role\_arn) | ARN of the IAM role permitted to receive success feedback for this topic. | `string` | `null` | no |
-| <a name="input_application_success_feedback_sample_rate"></a> [application\_success\_feedback\_sample\_rate](#input\_application\_success\_feedback\_sample\_rate) | Percentage of success to sample. | `number` | `null` | no |
-| <a name="input_content_based_deduplication"></a> [content\_based\_deduplication](#input\_content\_based\_deduplication) | Enables content-based deduplication for FIFO topics. For more information, see the [related documentation](https://docs.aws.amazon.com/sns/latest/dg/fifo-message-dedup.html) | `bool` | `false` | no |
-| <a name="input_delivery_policy"></a> [delivery\_policy](#input\_delivery\_policy) | The SNS delivery policy. More information can be found in the [AWS documentation](https://docs.aws.amazon.com/sns/latest/dg/sns-message-delivery-retries.html). Examples of using this variable can be found [here](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic). | `string` | `null` | no |
-| <a name="input_display_name"></a> [display\_name](#input\_display\_name) | The display name for the topic. If not specified, the display name will be the same as the topic name. | `string` | `null` | no |
-| <a name="input_fifo_topic"></a> [fifo\_topic](#input\_fifo\_topic) | Boolean indicating whether or not to create a FIFO (first-in-first-out) topic (default is **false**). Note that if enabling a FIFO topic, this module will automatically append the topic name with **.fifo**, per the naming requirements for FIFO topics. | `bool` | `false` | no |
-| <a name="input_firehose_failure_feedback_role_arn"></a> [firehose\_failure\_feedback\_role\_arn](#input\_firehose\_failure\_feedback\_role\_arn) | ARN of the IAM role for failure feedback. | `string` | `null` | no |
-| <a name="input_firehose_success_feedback_role_arn"></a> [firehose\_success\_feedback\_role\_arn](#input\_firehose\_success\_feedback\_role\_arn) | ARN of the IAM role permitted to receive success feedback for this topic. | `string` | `null` | no |
-| <a name="input_firehose_success_feedback_sample_rate"></a> [firehose\_success\_feedback\_sample\_rate](#input\_firehose\_success\_feedback\_sample\_rate) | Percentage of success to sample. | `number` | `null` | no |
-| <a name="input_http_failure_feedback_role_arn"></a> [http\_failure\_feedback\_role\_arn](#input\_http\_failure\_feedback\_role\_arn) | ARN of the IAM role for failure feedback. | `string` | `null` | no |
-| <a name="input_http_success_feedback_role_arn"></a> [http\_success\_feedback\_role\_arn](#input\_http\_success\_feedback\_role\_arn) | ARN of the IAM role permitted to receive success feedback for this topic. | `string` | `null` | no |
-| <a name="input_http_success_feedback_sample_rate"></a> [http\_success\_feedback\_sample\_rate](#input\_http\_success\_feedback\_sample\_rate) | Percentage of success to sample. | `number` | `null` | no |
-| <a name="input_kms_master_key_id"></a> [kms\_master\_key\_id](#input\_kms\_master\_key\_id) | The ID of an AWS-managed customer master key (CMK) for Amazon SNS or a custom CMK. For more information, see [Key Terms](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms). | `string` | `null` | no |
-| <a name="input_lambda_failure_feedback_role_arn"></a> [lambda\_failure\_feedback\_role\_arn](#input\_lambda\_failure\_feedback\_role\_arn) | ARN of the IAM role for failure feedback. | `string` | `null` | no |
-| <a name="input_lambda_success_feedback_role_arn"></a> [lambda\_success\_feedback\_role\_arn](#input\_lambda\_success\_feedback\_role\_arn) | ARN of the IAM role permitted to receive success feedback for this topic. | `string` | `null` | no |
-| <a name="input_lambda_success_feedback_sample_rate"></a> [lambda\_success\_feedback\_sample\_rate](#input\_lambda\_success\_feedback\_sample\_rate) | Percentage of success to sample. | `number` | `null` | no |
-| <a name="input_name"></a> [name](#input\_name) | Short, descriptive name of the environment. All resources will be named using this value as a prefix. See [aws\_sns\_topic](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic#name) for more information on name restrictions / requirements. | `string` | n/a | yes |
-| <a name="input_policy"></a> [policy](#input\_policy) | The JSON policy for the SNS topic. For more information about building AWS IAM policy documents with Terraform, see the [AWS IAM Policy Document Guide](https://learn.hashicorp.com/tutorials/terraform/aws-iam-policy?_ga=2.82257951.884055799.1634563672-272413849.1610471322). | `string` | `null` | no |
-| <a name="input_sqs_failure_feedback_role_arn"></a> [sqs\_failure\_feedback\_role\_arn](#input\_sqs\_failure\_feedback\_role\_arn) | ARN of the IAM role for failure feedback. | `string` | `null` | no |
-| <a name="input_sqs_success_feedback_role_arn"></a> [sqs\_success\_feedback\_role\_arn](#input\_sqs\_success\_feedback\_role\_arn) | ARN of the IAM role permitted to receive success feedback for this topic. | `string` | `null` | no |
-| <a name="input_sqs_success_feedback_sample_rate"></a> [sqs\_success\_feedback\_sample\_rate](#input\_sqs\_success\_feedback\_sample\_rate) | Percentage of success to sample. | `number` | `null` | no |
+| <a name="input_content_based_deduplication"></a> [content\_based\_deduplication](#input\_content\_based\_deduplication) | Enables content-based deduplication for FIFO queues. For more information, see the [related documentation](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing). | `bool` | `false` | no |
+| <a name="input_deduplication_scope"></a> [deduplication\_scope](#input\_deduplication\_scope) | Specifies whether message deduplication occurs at the message group or queue level. Valid values are **messageGroup** and **queue** (default). | `string` | `"queue"` | no |
+| <a name="input_delay_seconds"></a> [delay\_seconds](#input\_delay\_seconds) | The time in seconds that the delivery of all messages in the queue will be delayed. An integer from **0** to **900** (15 minutes). The default for this attribute is **0** seconds. | `number` | `0` | no |
+| <a name="input_fifo_queue"></a> [fifo\_queue](#input\_fifo\_queue) | Boolean designating a FIFO queue. If not set, it defaults to **false** making it standard. Note that if enabling a FIFO queue, this module will automatically append the queue name with **.fifo**, per the naming requirements for FIFO queues. | `bool` | `false` | no |
+| <a name="input_fifo_throughput_limit"></a> [fifo\_throughput\_limit](#input\_fifo\_throughput\_limit) | Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are **perQueue** (default) and **perMessageGroupId**. | `string` | `"perQueue"` | no |
+| <a name="input_kms_data_key_reuse_period_seconds"></a> [kms\_data\_key\_reuse\_period\_seconds](#input\_kms\_data\_key\_reuse\_period\_seconds) | The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling AWS KMS again. An integer representing seconds, between **60** seconds (1 minute) and **86,400** seconds (24 hours). The default is **300** (5 minutes). | `number` | `300` | no |
+| <a name="input_kms_master_key_id"></a> [kms\_master\_key\_id](#input\_kms\_master\_key\_id) | The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see [Key Terms](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms). | `string` | `null` | no |
+| <a name="input_max_message_size"></a> [max\_message\_size](#input\_max\_message\_size) | The limit of how many bytes a message can contain before Amazon SQS rejects it. An integer from **1024** bytes (1 KiB) up to **262144** bytes (256 KiB). The default for this attribute is **262144** (256 KiB). | `number` | `262144` | no |
+| <a name="input_message_retention_seconds"></a> [message\_retention\_seconds](#input\_message\_retention\_seconds) | The number of seconds Amazon SQS retains a message. Integer representing seconds, from **60** (1 minute) to **1209600** (14 days). The default for this attribute is **345600** (4 days). | `number` | `345600` | no |
+| <a name="input_name"></a> [name](#input\_name) | Short, descriptive name of the environment. All resources will be named using this value as a prefix. See [aws\_sqs\_queue](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue#name) for more information on name restrictions / requirements. | `string` | n/a | yes |
+| <a name="input_policy"></a> [policy](#input\_policy) | The JSON policy for the SQS queue. For more information about building AWS IAM policy documents with Terraform, see the [AWS IAM Policy Document Guide](https://learn.hashicorp.com/tutorials/terraform/aws-iam-policy?_ga=2.82257951.884055799.1634563672-272413849.1610471322). | `string` | `null` | no |
+| <a name="input_queue_name_override"></a> [queue\_name\_override](#input\_queue\_name\_override) | Used if there is a need to specify a queue name outside of the standardized nomenclature. For example, if importing a queue that doesn't follow the standard naming formats. See [aws\_sqs\_queue](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue#name) for more information on name restrictions / requirements. | `string` | `null` | no |
+| <a name="input_queue_prefix"></a> [queue\_prefix](#input\_queue\_prefix) | Queue name prefix, will be appended to `var.name` if a value is supplied. See [aws\_sqs\_queue](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sqs_queue#name) for more information on name restrictions / requirements. | `string` | `null` | no |
+| <a name="input_receive_wait_time_seconds"></a> [receive\_wait\_time\_seconds](#input\_receive\_wait\_time\_seconds) | The time for which a ReceiveMessage call will wait for a message to arrive (long polling) before returning. An integer from **0** to **20** (seconds). The default for this attribute is **0**, meaning that the call will return immediately. | `number` | `0` | no |
+| <a name="input_redrive_policy"></a> [redrive\_policy](#input\_redrive\_policy) | The JSON policy to set up the Dead Letter Queue, see [AWS docs](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html). Note: when specifying **maxReceiveCount**, you must specify it as an integer (**5**), and not a string (**'5'**). | `string` | `null` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A map of tag names and values for tags to apply to all taggable resources created by the module. Default value is a blank map to allow for using Default Tags in the provider. | `map(string)` | `{}` | no |
-| <a name="input_topic_name_override"></a> [topic\_name\_override](#input\_topic\_name\_override) | Used if there is a need to specify a topic name outside of the standardized nomenclature. For example, if importing a topic that doesn't follow the standard naming formats. See [aws\_sns\_topic](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic#name) for more information on name restrictions / requirements. | `string` | `null` | no |
-| <a name="input_topic_prefix"></a> [topic\_prefix](#input\_topic\_prefix) | SNS Topic name prefix, will be appended to `var.name` if a value is supplied. See [aws\_sns\_topic](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/sns_topic#name) for more information on name restrictions / requirements. | `string` | `null` | no |
+| <a name="input_visibility_timeout_seconds"></a> [visibility\_timeout\_seconds](#input\_visibility\_timeout\_seconds) | The visibility timeout for the queue. An integer from **0** to **43200** (12 hours). The default for this attribute is **30**. For more information about visibility timeout, see [AWS docs](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html). | `number` | `30` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_topic"></a> [topic](#output\_topic) | A map of properties for the created SNS topic. |
+| <a name="output_queue"></a> [queue](#output\_queue) | A map of properties for the created SQS queue. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
