@@ -1,6 +1,8 @@
-# SNS Platform Application
+# Basic usage of SQS
+Basic quickstart for creating a SQS resource.
 
-Basic quickstart for creating a SNS Platform Application resource.
+Example shows using Default Tags in the provider as well as passing additional tags into the resource.
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
@@ -14,7 +16,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_sns_platform_application"></a> [sns\_platform\_application](#module\_sns\_platform\_application) | so1omon563/sns/aws//modules/sns_platform_application | 0.1.0 |
+| <a name="module_sqs_queue"></a> [sqs\_queue](#module\_sqs\_queue) | so1omon563/sqs/aws | 0.1.0 |
 
 ## Resources
 

@@ -7,13 +7,12 @@ provider "aws" {
   }
 }
 
-module "sns_topic" {
-  source  = "so1omon563/sns/aws"
+module "sqs_queue" {
+  source  = "so1omon563/sqs/aws"
   version = "0.1.0" # Replace with appropriate version
-
-  name         = "example-topic"
-  topic_prefix = "my-product-name"
+  name    = "example-queue"
   tags = {
     example = "true"
   }
+  queue_prefix = "my-product-name"
 }
