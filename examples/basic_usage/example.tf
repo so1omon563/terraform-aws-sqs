@@ -9,7 +9,7 @@ provider "aws" {
 
 module "sqs_queue" {
   source  = "so1omon563/sqs/aws"
-  version = "0.1.0" # Replace with appropriate version
+  version = "1.1.0" # Replace with appropriate version
   name    = "example-queue"
   tags = {
     example = "true"
