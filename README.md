@@ -5,7 +5,13 @@ Creates an SQS Queue. Supports all standard options for the SQS Queue resource.
 Examples for use can be found under the [examples](https://github.com/so1omon563/terraform-aws-sqs/tree/main/examples) directory.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 Auto-generated technical documentation is created using [`terraform-docs`](https://terraform-docs.io/)
+## Examples
+
+```hcl
+# See examples under the top level examples directory for more information on how to use this module.
+```
 
 ## Requirements
 
@@ -18,7 +24,7 @@ Auto-generated technical documentation is created using [`terraform-docs`](https
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.20.1 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.35.0 |
 
 ## Modules
 
@@ -57,4 +63,6 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_queue"></a> [queue](#output\_queue) | A map of properties for the created SQS queue. |
+
+
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
